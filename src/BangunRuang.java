@@ -5,14 +5,15 @@ public class BangunRuang {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("==========\nMenu Utama\n==========\n1. Hitung Balok\n2. Hitung Tabung\n0. Exit");
 
-        System.out.print("Pilihan : ");
         int pilihan;
-        pilihan = scanner.nextInt();
-        int ulangi = 1;
+        int ulangi;
 
-        if(ulangi == 1){
+        while(true){
+
+            System.out.println("==========\nMenu Utama\n==========\n1. Hitung Balok\n2. Hitung Tabung\n0. Exit");
+            System.out.print("Pilihan : ");
+            pilihan = scanner.nextInt();
             switch (pilihan){
                 case 1:
                     double p, l, t, luasPersegiPanjang, kelilingPersegiPanjang, volumeBalok, luasPermukaanBalok;
@@ -33,7 +34,17 @@ public class BangunRuang {
                     System.out.println("Keliling Persegi Panjang : " + kelilingPersegiPanjang);
                     System.out.println("Volume Balok : " + volumeBalok);
                     System.out.println("Luas Permukaan Balok : " + luasPermukaanBalok);
-                    System.out.print("Ulangi ? (Ya : 1 || Tidak : 0)"); ulangi = scanner.nextInt();
+
+                    System.out.print("Ulangi ? (Ya : 1 || Tidak : 0)");
+                    ulangi = scanner.nextInt();
+                    if(ulangi == 1){
+                        System.out.println("==========\nMenu Utama\n==========\n1. Hitung Balok\n2. Hitung Tabung\n0. Exit");
+                        System.out.print("Pilihan : ");
+                        pilihan = scanner.nextInt();
+                    }
+                    else{
+                        System.exit(3);
+                    }
                 case 2:
                     double tTab, r, luasLingkaran, kelilingLingkaran, volumeTabung, luasPermukaanTabung;
                     System.out.print("Input Tinggi : "); tTab = scanner.nextDouble();
@@ -51,9 +62,18 @@ public class BangunRuang {
                     System.out.println("Keliling Lingkaran : " + kelilingLingkaran);
                     System.out.println("Volume Tabung : " + volumeTabung);
                     System.out.println("Luas Permukaan Tabung : " + luasPermukaanTabung);
-                    System.out.print("Ulangi ? (Ya : 1 || Tidak : 0)"); ulangi = scanner.nextInt();
+                    System.out.print("Ulangi ? (Ya : 1 || Tidak : 0)");
+                    ulangi = scanner.nextInt();
+                    if(ulangi == 1){
+                        System.out.println("==========\nMenu Utama\n==========\n1. Hitung Balok\n2. Hitung Tabung\n0. Exit");
+                        System.out.print("Pilihan : ");
+                        pilihan = scanner.nextInt();
+                    }
+                    else{
+                        System.exit(3);
+                    }
                 case 0:
-                    break;
+                    System.exit(3);
             }
         }
     }
